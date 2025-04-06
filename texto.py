@@ -7,6 +7,8 @@ MENUDAS = {"a", "con", "de", "del", "el", "en", "la", "las",
 
 def envuelve(texto, ancho=72):
     """Parte el texto en lineas de `ancho` caracteres como maximo."""
+    if ancho < 1:
+        raise ValueError("ancho debe ser >= 1")
     lineas, actual = [], ""
     for palabra in texto.split():
         if not actual:
