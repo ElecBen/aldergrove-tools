@@ -21,3 +21,9 @@ def envuelve(texto, ancho=72):
     if actual:
         lineas.append(actual)
     return lineas
+
+
+def sangra(texto, prefijo="    "):
+    """Anade `prefijo` a cada linea que tenga contenido."""
+    return "\n".join(prefijo + l if l.strip() else l
+                     for l in texto.split("\n"))
