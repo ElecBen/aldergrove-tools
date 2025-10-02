@@ -31,3 +31,8 @@ def test_sin_acentos():
 
 def test_sin_acentos_toca_la_enie():
     assert sin_acentos("año") == "ano"
+
+
+def test_sin_acentos_tipo():
+    with pytest.raises(TypeError):
+        sin_acentos(None)
