@@ -1,6 +1,6 @@
 [project]
 name = "aldergrove-tools"
-version = "0.1.0"
+version = "0.2.0"
 description = "Utilidades de texto para envolver, sangrar y limpiar cadenas"
 requires-python = ">=3.9"
 license = { text = "MIT" }
