@@ -1,3 +1,5 @@
+"""Utilidades de texto sin dependencias externas."""
+
 import unicodedata
 
 
