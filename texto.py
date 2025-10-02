@@ -31,5 +31,7 @@ def sangra(texto, prefijo="    "):
 
 def sin_acentos(texto):
     """Quita tildes y dieresis y deja el resto tal cual."""
+    if not isinstance(texto, str):
+        raise TypeError("texto debe ser str")
     suelto = unicodedata.normalize("NFKD", texto)
     return "".join(c for c in suelto if not unicodedata.combining(c))
