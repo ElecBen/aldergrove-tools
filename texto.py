@@ -2,6 +2,8 @@
 
 import unicodedata
 
+__all__ = ["envuelve", "sangra", "sin_acentos"]
+
 
 MENUDAS = {"a", "con", "de", "del", "el", "en", "la", "las",
            "los", "o", "por", "y"}
