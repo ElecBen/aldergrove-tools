@@ -1,5 +1,7 @@
 """Utilidades de texto sin dependencias externas."""
 
+from __future__ import annotations
+
 import unicodedata
 
 __all__ = ["envuelve", "sangra", "sin_acentos"]
@@ -9,7 +11,7 @@ MENUDAS = {"a", "con", "de", "del", "el", "en", "la", "las",
            "los", "o", "por", "y"}
 
 
-def envuelve(texto, ancho=72):
+def envuelve(texto: str, ancho: int = 72) -> list[str]:
     """Parte el texto en lineas de `ancho` caracteres como maximo."""
     if ancho < 1:
         raise ValueError("ancho debe ser >= 1")
@@ -27,13 +29,13 @@ def envuelve(texto, ancho=72):
     return lineas
 
 
-def sangra(texto, prefijo="    "):
+def sangra(texto: str, prefijo: str = "    ") -> str:
     """Anade `prefijo` a cada linea que tenga contenido."""
     return "\n".join(prefijo + l if l.strip() else l
                      for l in texto.split("\n"))
 
 
-def sin_acentos(texto):
+def sin_acentos(texto: str) -> str:
     """Quita tildes y dieresis y deja el resto tal cual."""
     if not isinstance(texto, str):
         raise TypeError("texto debe ser str")
