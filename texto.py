@@ -4,7 +4,7 @@ from __future__ import annotations
 
 import unicodedata
 
-__all__ = ["envuelve", "sangra", "sin_acentos"]
+__all__ = ["envuelve", "sangra", "sin_acentos", "titulo"]
 
 
 MENUDAS = {"a", "con", "de", "del", "el", "en", "la", "las",
@@ -41,3 +41,12 @@ def sin_acentos(texto: str) -> str:
         raise TypeError("texto debe ser str")
     suelto = unicodedata.normalize("NFKD", texto)
     return "".join(c for c in suelto if not unicodedata.combining(c))
+
+
+def titulo(texto):
+    """Capitaliza cada palabra menos las menudas que no van primeras."""
+    salida = []
+    for i, palabra in enumerate(texto.lower().split()):
+        salida.append(palabra if i and palabra in MENUDAS
+                      else palabra.capitalize())
+    return " ".join(salida)
