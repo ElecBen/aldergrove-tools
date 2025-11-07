@@ -4,7 +4,7 @@ from __future__ import annotations
 
 import unicodedata
 
-__all__ = ["envuelve", "sangra", "sin_acentos", "titulo"]
+__all__ = ["envuelve", "resume", "sangra", "sin_acentos", "titulo"]
 
 
 MENUDAS = {"a", "con", "de", "del", "el", "en", "la", "las",
@@ -50,3 +50,13 @@ def titulo(texto):
         salida.append(palabra if i and palabra in MENUDAS
                       else palabra.capitalize())
     return " ".join(salida)
+
+
+def resume(texto, ancho=40, cola="..."):
+    """Recorta el texto sin partir palabras y remata con `cola`."""
+    if len(texto) <= ancho:
+        return texto
+    corte = texto[:ancho - len(cola)].rstrip()
+    if " " in corte:
+        corte = corte[:corte.rindex(" ")].rstrip()
+    return corte + cola
