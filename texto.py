@@ -43,7 +43,7 @@ def sin_acentos(texto: str) -> str:
     return "".join(c for c in suelto if not unicodedata.combining(c))
 
 
-def titulo(texto):
+def titulo(texto: str) -> str:
     """Capitaliza cada palabra menos las menudas que no van primeras."""
     salida = []
     for i, palabra in enumerate(texto.lower().split()):
@@ -52,7 +52,8 @@ def titulo(texto):
     return " ".join(salida)
 
 
-def resume(texto, ancho=40, cola="..."):
+def resume(texto: str, ancho: int = 40,
+           cola: str = "...") -> str:
     """Recorta el texto sin partir palabras y remata con `cola`."""
     if ancho <= len(cola):
         raise ValueError("ancho debe superar la longitud de cola")
