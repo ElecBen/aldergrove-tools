@@ -54,6 +54,8 @@ def titulo(texto):
 
 def resume(texto, ancho=40, cola="..."):
     """Recorta el texto sin partir palabras y remata con `cola`."""
+    if ancho <= len(cola):
+        raise ValueError("ancho debe superar la longitud de cola")
     if len(texto) <= ancho:
         return texto
     corte = texto[:ancho - len(cola)].rstrip()
