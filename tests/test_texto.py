@@ -1,6 +1,6 @@
 import pytest
 
-from texto import envuelve, sangra, sin_acentos, titulo
+from texto import envuelve, resume, sangra, sin_acentos, titulo
 
 
 def test_envuelve_corta_por_palabras():
@@ -44,3 +44,11 @@ def test_titulo():
 
 def test_titulo_capitaliza_la_primera():
     assert titulo("de norte a sur") == "De Norte a Sur"
+
+
+def test_resume():
+    assert resume("uno dos tres cuatro", 12) == "uno dos..."
+
+
+def test_resume_deja_el_corto_igual():
+    assert resume("uno dos", 12) == "uno dos"
