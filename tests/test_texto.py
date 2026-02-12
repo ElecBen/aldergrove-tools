@@ -52,3 +52,8 @@ def test_resume():
 
 def test_resume_deja_el_corto_igual():
     assert resume("uno dos", 12) == "uno dos"
+
+
+def test_resume_ancho_menor_que_la_cola():
+    with pytest.raises(ValueError):
+        resume("uno dos tres", 2)
