@@ -27,3 +27,11 @@ docs/            notas de diseno
 | `sin_acentos(texto)` | el texto sin tildes ni dieresis |
 | `titulo(texto)` | el texto en mayusculas de titulo, sin tocar las menudas |
 | `resume(texto, ancho, cola)` | el texto recortado por la ultima palabra que cabe |
+
+## Medir
+
+El banco de pruebas vive en `bench/` y se lanza como modulo, siempre desde la raiz del repo:
+
+```
+python -m bench.medir
+```
