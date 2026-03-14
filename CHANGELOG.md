@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.3.0
+
+- titulo(): el texto en mayusculas de titulo, sin tocar las menudas
+- resume(): el texto recortado por la ultima palabra que cabe
+- Los tests corren en GitHub Actions
+
 ## 0.2.0
 
 - sin_acentos(): el texto sin tildes ni dieresis
