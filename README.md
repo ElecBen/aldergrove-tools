@@ -1,5 +1,7 @@
 # aldergrove-tools
 
+![tests](https://github.com/ElecBen/aldergrove-tools/actions/workflows/tests.yml/badge.svg)
+
 Utilidades de texto para envolver, sangrar y limpiar cadenas.
 
 ## Uso
